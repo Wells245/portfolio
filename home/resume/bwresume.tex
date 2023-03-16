@@ -1,0 +1,193 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{fontspec}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\usepackage{multicol}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{FirstName}{LastName}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{500 College Ave, Swarthmore, PA 19081 }{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+% \phone[mobile]{909-839-3097}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+% \email{xpan1@swarthmore.edu}                               % optional, remove / comment the line if not wanted
+% \homepage{shawnpan.me}                         % optional, remove / comment the line if not wanted
+% \extrainfo{}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+  
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Brett \textsc{Wells}
+	}\bigskip\par}
+	
+	\par{\centering
+		{\textsc{376 Puleo Drive, London OH, +1 740 604-2895, \href{mailto:wells.245@wright.edu}{wells.245@wright.edu}}
+	}\bigskip\par}
+\
+%--------------------SECTIONS-----------------------------------
+
+%Section: Work Experience
+\section{Work Experience}
+\begin{tabular}{rl}	
+\textsc{08/2018 - 01/2019} & \textbf{Calculus Teachers Assistant and Grader (6 hours a week)} \\
+\textit{} & Wright State University Dayton, Ohio\\
+\end{tabular}
+\begin{itemize}
+  \item Helping and tutoring students who desire extra assistance
+  \item Grading all homework papers and quizzes 
+  \item Maintaining an excel spreadsheet with all assignments, grades, and other relevant information
+\end{itemize}
+
+\begin{tabular}{rl}	
+\textsc{08/2019 - 06/2020} & \textbf{Computer Science Tutor and Assistant (8 - 11 hours a week)} \\
+\textit{} & Wright State University Dayton, Ohio\\
+\end{tabular}
+\begin{itemize}
+  \item Working through complex problems and projects with students
+  \item Reviewing and explaining computer science concepts and ideas to students
+  \item Testing and grading projects and coursework
+\end{itemize}
+
+\begin{tabular}{rl}	
+\textsc{08/2020 - 08/2021} & \textbf{Environmental Compliance Intern (30 hours a week) } \\
+\textit{} & Wright Patterson Air force Base Dayton, Ohio\\
+\end{tabular}
+\begin{itemize}
+  \item Editing, compiling, and consolidating documents
+  \item Writing, testing, and running scripts to solve file management problems
+  \item Attending regular meetings to manage workload, projects, and give status reports to coworkers
+\end{itemize}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+\textsc{08/2021} & \textbf{Bachelors of Science in Computer Science Engineering} \\
+\textsc{} & Wright State University Dayton, Ohio\\
+\textsc{GPA} & 3.33
+
+\end{tabular}
+
+\begin{tabular}{rl}	
+\textsc{03/2022} & \textbf{Certificate in Teaching English to Speakers of Other Languages } \\
+\textsc{} & International TEFL and TESOL Training\\
+
+\end{tabular}
+
+
+\section{Skills}
+\begin{minipage}{\maincolumnwidth}
+	\small{
+    	\begin{itemize}
+          \item \textbf{Relevant Coursework:} Operating Systems Concepts and Usage, OS Internals and Designs, Computer Organization and Architecture, Software Development and Design, Discrete Structures and Algorithms, Comparative Languages, Computational Theory, Technical Communication for Engineers, Security Attack and Defenses, System Simulations, Database Management \\
+          \item \textbf{Programming Languages:} Java, Python, Swift, JavaScript, Scheme, C/C++, SQL, Powershell Script, Unix/Bash Script, XML, Latex,  NodeJS, HTML/CSS \\
+		\end{itemize}}
+\end{minipage}
+
+\end{document}
