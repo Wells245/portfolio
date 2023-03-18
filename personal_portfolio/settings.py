@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-96f9zgq_gxets#7(m-lk)=-fec5!5(^8du_+=r+na)n)8*jum-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.railway.com','127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
 
 # Application definition
 
@@ -121,6 +122,7 @@ DATABASES['default'].update(db_from_env)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
 
 STATIC_URL = 'static/'
 
